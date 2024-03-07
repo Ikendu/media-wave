@@ -1,0 +1,189 @@
+@font-face {
+  font-family: 'gotham';
+  src: url('assets/fonts/Gotham-Font/GothamBold.ttf') format('woff');
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-width: 320px;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-number-arrows::-webkit-outer-spin-button,
+  .no-number-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .gotham {
+    font-family: 'Gotham', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  }
+  .no-number-arrows[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .grid-autofill {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+    margin: 3rem 0;
+    margin-bottom: 3rem;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2d80e0;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2d80e0;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  .chat-container {
+    scroll-behavior: smooth;
+    height: 65vh;
+    margin-top: -10px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* .chat-container::-webkit-scrollbar {
+    display: none;
+  } */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none; /* WebKit (Chrome, Safari, etc.) */
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: 8px;
+    border-radius: 8px;
+    scrollbar-color: #e4dddd #fff;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 8px;
+    background-color: #fff;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    width: 8px;
+    border-radius: 8px;
+    background-color: #e4dddd;
+  }
+
+  @media only screen and (max-height: 799px) {
+    .chat-container {
+      scroll-behavior: smooth;
+      height: 63vh;
+      margin-top: -10px;
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+
+/*Date picker*/
+input[type='date']::-webkit-calendar-picker-indicator {
+  /* display: none;
+  -webkit-appearance: none; */
+
+  /* padding: 0px;
+  margin: 0px;
+  margin-top: 10px; */
+  /* pointer-events: none; */
+  background: url(https://mywildalberta.ca/images/GFX-MWA-Parks-Reservations.png)
+    no-repeat;
+}
